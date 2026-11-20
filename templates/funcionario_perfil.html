@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Meu Perfil</h2>
+<p><strong>Nome:</strong> {{ usuario.nome }}</p>
+<p><strong>Email:</strong> {{ usuario.email }}</p>
+<p><strong>Perfil:</strong> {{ usuario.perfil }}</p>
+<p><strong>Status:</strong> {{ 'Ativo' if usuario.ativo else 'Inativo' }}</p>
+{% endblock %}

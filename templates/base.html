@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Empresa</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <strong>Portal Empresa</strong>
+    <span class="perfil">{{ g.usuario.nome }} ({{ g.usuario.perfil }})</span>
+    <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+  </div>
+</header>
+
+<nav class="menu">
+  <div class="container">
+    {% if g.usuario.perfil == 'admin' %}
+      <a href="{{ url_for('admin_avisos') }}" class="{% if request.endpoint=='admin_avisos' %}ativo{% endif %}">Avisos</a>
+      <a href="{{ url_for('admin_calendario') }}" class="{% if request.endpoint=='admin_calendario' %}ativo{% endif %}">Calendario</a>
+      <a href="{{ url_for('admin_usuarios') }}" class="{% if request.endpoint=='admin_usuarios' %}ativo{% endif %}">Usuarios</a>
+    {% else %}
+      <a href="{{ url_for('funcionario_avisos') }}" class="{% if request.endpoint=='funcionario_avisos' %}ativo{% endif %}">Avisos</a>
+      <a href="{{ url_for('funcionario_calendario') }}" class="{% if request.endpoint=='funcionario_calendario' %}ativo{% endif %}">Calendario</a>
+      <a href="{{ url_for('funcionario_perfil') }}" class="{% if request.endpoint=='funcionario_perfil' %}ativo{% endif %}">Meu Perfil</a>
+    {% endif %}
+  </div>
+</nav>
+
+<main class="container">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert">
+        {% for m in messages %}<p>{{ m }}</p>{% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  {% block conteudo %}{% endblock %}
+</main>
+
+<footer class="rodape">
+  <div class="container">Portal Empresa - versao basica</div>
+</footer>
+</body>
+</html>

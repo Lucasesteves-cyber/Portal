@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Calendario</h2>
+<p><a href="{{ url_for('admin_novo_evento') }}" class="btn">+ Novo evento</a></p>
+<table>
+  <thead><tr><th>Titulo</th><th>Descricao</th><th>Data</th><th>Autor</th></tr></thead>
+  <tbody>
+    {% for e in eventos %}
+    <tr>
+      <td>{{ e.titulo }}</td>
+      <td>{{ e.descricao }}</td>
+      <td>{{ e.data_evento }}</td>
+      <td>{{ e.autor }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

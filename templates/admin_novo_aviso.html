@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Novo aviso</h2>
+<form method="post">
+  <p><label>Titulo</label><br><input type="text" name="titulo" required></p>
+  <p><label>Conteudo</label><br><textarea name="conteudo" rows="5" required></textarea></p>
+  <p><button type="submit" class="btn">Publicar</button> <a href="{{ url_for('admin_avisos') }}">Cancelar</a></p>
+</form>
+{% endblock %}

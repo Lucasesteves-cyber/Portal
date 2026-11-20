@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<h2>Novo usuario</h2>
+<form method="post">
+  <p><label>Nome</label><br><input type="text" name="nome" required></p>
+  <p><label>Email</label><br><input type="email" name="email" required></p>
+  <p><label>Senha</label><br><input type="password" name="senha" required></p>
+  <p><label>Perfil</label><br>
+    <select name="perfil">
+      <option value="funcionario">Funcionario</option>
+      <option value="admin">Admin</option>
+    </select>
+  </p>
+  <p><button type="submit" class="btn">Criar</button> <a href="{{ url_for('admin_usuarios') }}">Cancelar</a></p>
+</form>
+{% endblock %}

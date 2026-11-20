@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login - Portal Empresa</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="login-box">
+  <h2>Entrar</h2>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert">
+        {% for m in messages %}<p>{{ m }}</p>{% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  <form method="post">
+    <p><label>Email</label><br><input type="email" name="email" required></p>
+    <p><label>Senha</label><br><input type="password" name="senha" required></p>
+    <p><button type="submit">Entrar</button></p>
+  </form>
+  <p class="dica">Admin: admin@empresa.com / admin123</p>
+</div>
+</body>
+</html>

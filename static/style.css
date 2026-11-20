@@ -1,0 +1,29 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; color: #222; }
+.container { max-width: 900px; margin: 0 auto; padding: 16px; }
+.topbar { background: #1a3a5c; color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; }
+.topbar strong { font-size: 1.2em; }
+.perfil { opacity: 0.9; font-size: 0.9em; }
+.btn-sair { background: #c0392b; color: #fff; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-size: 0.9em; }
+.btn-sair:hover { background: #a93226; }
+.menu { background: #fff; border-bottom: 1px solid #ddd; }
+.menu .container { display: flex; gap: 8px; padding: 8px 16px; }
+.menu a { padding: 6px 12px; text-decoration: none; color: #1a3a5c; border: 1px solid #1a3a5c; border-radius: 4px; font-size: 0.9em; }
+.menu a:hover { background: #1a3a5c; color: #fff; }
+.menu a.ativo { background: #1a3a5c; color: #fff; }
+main { background: #fff; padding: 20px; border-radius: 4px; margin-top: 16px; }
+h2 { margin-top: 0; color: #1a3a5c; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background: #eef2f7; }
+form label { display: block; margin: 8px 0 4px; font-weight: bold; }
+input, textarea, select { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 10px; }
+button.btn, input[type="submit"] { background: #1a3a5c; color: #fff; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; width: auto; }
+button.btn:hover { background: #152e4a; }
+input[type="submit"] { cursor: pointer; }
+.alert { background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 4px; margin-bottom: 16px; }
+.alert p { margin: 4px 0; }
+.login-box { max-width: 360px; margin: 60px auto; background: #fff; padding: 24px; border-radius: 4px; border: 1px solid #ddd; }
+.login-box h2 { margin-top: 0; text-align: center; }
+.dica { text-align: center; font-size: 0.85em; color: #666; margin-top: 14px; }
+.rodape { text-align: center; padding: 16px; font-size: 0.85em; color: #666; border-top: 1px solid #ddd; }
